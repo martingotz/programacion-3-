@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Movies from '../Movies/Movies';
 
 class Card extends Component {
+    
     render() {
         return (
             <div>
