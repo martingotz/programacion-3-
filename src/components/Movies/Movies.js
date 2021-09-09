@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from '../Card/Card';
 //import Card from '../Card/Card';
  class Movies extends Component {
      constructor(){
@@ -42,7 +43,7 @@ import React, { Component } from 'react';
             console.log(data);
             this.setState({
                 nexturl:data.info.next,
-                personajes: this.state.personajes.concat(data.results),
+               movies: this.state.movies.concat(data.results),
             });
         })
         .catch((e)=> console.log(e))
