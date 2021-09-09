@@ -16,13 +16,7 @@ class Card extends Component {
                 </section>
                 <main>
                 <Movies/>
-                <Movies/>
-                <Movies/>
-                <Movies/>
-                <Movies/>
-                <Movies/>
-                <Movies/>
-                <Movies/>
+              
 
                 </main>
 
