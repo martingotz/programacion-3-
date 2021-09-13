@@ -5,7 +5,10 @@ import './Topbar.css';
  class Topbar extends Component {
     render() {
         return (
+            <>
             <div className="TopbarContainer">
+
+                
 
                 
                 <p className="orden">Ordenar ASC/ DESC</p>
@@ -15,9 +18,14 @@ import './Topbar.css';
                 <input type="text" name="search" id="" placeholder="Search" />
                     <button type="submit">Enviar<i className="fas fa-search"></i></button>
                 </form>
-
+                    
 
             </div>
+
+            <br/>
+            <br/>
+            <button className="cargartarjeta" onClick={() => this.add()}>Cargar más tarjetas</button>
+            </>
         )
     }
 }

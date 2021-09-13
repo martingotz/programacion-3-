@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
+import './Movie.css'
 
  class Movies extends Component {
      constructor(props){
@@ -85,7 +86,7 @@ import Card from '../Card/Card';
         
         return ( 
             <>
-            <div>
+            <div className="movieContainer">
              {loading}
                 
             </div>

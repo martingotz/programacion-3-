@@ -1,4 +1,5 @@
 import React   from 'react'
+import './Card.css'
 
 
   function Card(props) {
@@ -7,21 +8,22 @@ import React   from 'react'
     
     
         return (
-            <div>
+            <div className="container">
                 <main>
-                    <button onClick={() => this.add()}>Cargar más tarjetas</button>
                     <section className="card-container">
                         <article>
                             <section className="navigation">
                                 <div>
-                                    <i className="fas fa-chevron-left"></i>
-                                    <i className="fas fa-chevron-right"></i>
+                                    <i className="fas fa-chevron-left"  > <img className="leftarrow" src={"/assets/img/left-arrow.png"}/>     </i>
+
+                                    <i className="fas fa-chevron-right"><img className="rightarrow" src={"/assets/img/right-arrow.png"}/> </i>
+                                    <i className="far fa-window-close"><img className="delete" src={"/assets/img/cruz.jpeg"}/>  </i>
                                 </div>
-                                <i className="far fa-window-close"></i>
+                               
                             </section>
                             <main>
                                 
-                                <img src= {`https://image.tmdb.org/t/p/w342/${poster_path}`} alt=""/>
+                                <img className="img" src= {`https://image.tmdb.org/t/p/w342/${poster_path}`} alt=""/>
 
                                 <h3>{title}</h3>
                                 <p className ="description">{overview}</p>

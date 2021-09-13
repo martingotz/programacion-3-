@@ -1,0 +1,47 @@
+
+
+    .container{
+
+
+        
+        
+            width: 25%;
+
+
+            margin-top: 5%;
+
+            border: 1px solid black;
+
+
+
+
+
+
+        } 
+
+
+        .leftarrow{
+
+
+            width: 7%;
+        }
+
+        
+        .rightarrow{
+
+
+            width: 7%;
+
+        }
+
+
+        .delete{
+
+
+            width: 7%;
+            margin-left: 90%;
+            
+        }
+
+
+        .img{width: 100%;}
