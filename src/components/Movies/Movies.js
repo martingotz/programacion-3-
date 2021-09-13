@@ -66,7 +66,7 @@ import Card from '../Card/Card';
     */
     deleteCard(id){
         console.log(id);
-        const moviesDelete = this.state.movie.filter(movie => movie.id != id)
+        const moviesDelete = this.state.moviesOriginal.filter( movie => movie.id != id)
         this.setState ({
             movie: moviesDelete
         })
@@ -74,11 +74,18 @@ import Card from '../Card/Card';
     }
         
     render() {
+        let loading ;
+        if (this.state.moviesOriginal== " ") {
+            loading = <p> loading....</p>
+            console.log("ESTO ES LOADING");
+        } else {
+            loading = <> { this.state.moviesOriginal.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} />) } </>
+        }
         
-        return (
+        return ( 
             <>
             <div>
-               {this.state.moviesOriginal.map(movie=> <Card key={movie.id} movie={movie} delete={(movieDelete)=> this.deleteCard(movieDelete)} />)}
+             {loading}
                 
             </div>
                 <button onClick={() => this.add()}>Cargar más tarjetas</button>

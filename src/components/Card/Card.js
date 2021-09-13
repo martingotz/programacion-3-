@@ -31,7 +31,7 @@ import React   from 'react'
                                 
                                 </section>
                                 <a href="">Ver más</a>
-                                <button onClick={()=> props.delete(id)}> Delete </button>
+                                <button onClick={()=> this.props.delete(id)}> Delete </button>
                                
                             </main>
                         </article>
