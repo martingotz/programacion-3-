@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
-//import Card from '../Card/Card';
- class Movies extends Component {
-     constructor(){
-         super(
 
-         )
+ class Movies extends Component {
+     constructor(props){
+         super(props)
          this.state ={ 
             moviesOriginal: [],
             moviesFilter:[],
@@ -19,13 +17,10 @@ import Card from '../Card/Card';
          
          .then((respuesta)=>respuesta.json()) 
        .then((data)=> {
-           
-           console.log('datos de la api');
-           console.log(data);
            this.setState({
-               moviesOriginal: data.results,// esto esta mal, cambiar cuando traiga ok la api.
-               moviesFilter: data.results,
-               nexturl: data.info.next, // Va con agregar mas 
+               moviesOriginal: data.results,
+               //moviesFilter: data.results,
+               //nexturl: data.info.next, // Va con agregar mas 
            })
 
 
@@ -58,12 +53,10 @@ import Card from '../Card/Card';
 
         
     render() {
-        console.log("renderizado");
+        
         return (
             <div>
-                <p>Esto es movies </p>
-                <button onClick={()=>this.add()} > Add More </button>
-                <button onClick={()=>this.original()}>Limit</button>
+               {this.state.moviesOriginal.map(movie=> <Card key={movie.id} movie={movie} />)}
             </div>
         )
     }

@@ -1,9 +1,9 @@
 import React   from 'react'
-import Movies from '../Movies/Movies';
+
 
   function Card(props) {
-      console.log(props);
-   // const {title, overview, backdrop_path} = props.movieInfo
+      console.log(props.movie);
+   const {title, overview, poster_path} = props.movie
     
     
         return (
@@ -20,13 +20,13 @@ import Movies from '../Movies/Movies';
                                 <i className="far fa-window-close"></i>
                             </section>
                             <main>
-                                <img src="/pUc51UUQb1lMLVVkDCaZVsCo37U.jpg" alt=""/>
-                                <h3>e</h3>
-                                <p className ="description">m</p>
+                                
+                                <img src= {`https://image.tmdb.org/t/p/w342/${poster_path}`} alt=""/>
+
+                                <h3>{title}</h3>
+                                <p className ="description">{overview}</p>
                                 <section className ="aditional-info">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Esse qui atque.</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Esse qui atque.</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Esse qui atque.</p>
+                                
                                 </section>
                                 <a href="">Ver más</a>
                                
@@ -34,14 +34,7 @@ import Movies from '../Movies/Movies';
                         </article>
                     </section>
                         </main>
-                <main>
-                <Movies/>
-                  
-
-
-              
-
-                </main>
+                
 
             </div>
         )

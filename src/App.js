@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Card from './components/Card/Card';
+import Movies from './components/Movies/Movies';
 function App()
  {
   return (
@@ -11,7 +11,7 @@ function App()
   </div>
 
   <div>
-  <Card/>
+  <Movies/>
   </div>
 
   <div> 
