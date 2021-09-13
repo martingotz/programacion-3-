@@ -3,7 +3,7 @@ import React   from 'react'
 
   function Card(props) {
       console.log(props.movie);
-   const {title, overview, poster_path} = props.movie
+   const {title, overview, poster_path,id} = props.movie
     
     
         return (
@@ -31,6 +31,7 @@ import React   from 'react'
                                 
                                 </section>
                                 <a href="">Ver más</a>
+                                <button onClick={()=> props.delete(id)}> Delete </button>
                                
                             </main>
                         </article>

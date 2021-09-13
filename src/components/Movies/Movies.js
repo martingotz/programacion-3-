@@ -64,14 +64,21 @@ import Card from '../Card/Card';
 
     }
     */
+    deleteCard(id){
+        console.log(id);
+        const moviesDelete = this.state.movie.filter(movie => movie.id != id)
+        this.setState ({
+            movie: moviesDelete
+        })
 
+    }
         
     render() {
         
         return (
             <>
             <div>
-               {this.state.moviesOriginal.map(movie=> <Card key={movie.id} movie={movie} />)}
+               {this.state.moviesOriginal.map(movie=> <Card key={movie.id} movie={movie} delete={(movieDelete)=> this.deleteCard(movieDelete)} />)}
                 
             </div>
                 <button onClick={() => this.add()}>Cargar más tarjetas</button>
