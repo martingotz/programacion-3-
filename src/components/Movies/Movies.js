@@ -19,8 +19,8 @@ import Card from '../Card/Card';
        .then((data)=> {
            this.setState({
                moviesOriginal: data.results,
-               //moviesFilter: data.results,
-               //nexturl: data.info.next, // Va con agregar mas 
+               moviesFilter: data.results,
+               nexturl: data.next, // Va con agregar mas 
            })
 
 
@@ -30,15 +30,28 @@ import Card from '../Card/Card';
      componentDidUpdate(){
          console.log("componentDidUpdate");
      }
-    add (){
+     add (){
+        const url= this.state.nexturl
+        
+         fetch(url)
+             .then((respuesta) => respuesta.json())
+             .then((data) => {
+                 this.setState({
+                     nexturl: 'https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=1'
+
+                 })
+                   })
+     }
+    /*
+     add (){
         const url = this.state.nexturl;
         fetch(url)
         .then((respuesta)=> respuesta.json())
         .then((data)=>{
             console.log(data);
             this.setState({
-                nexturl:data.info.next,
-               movies: this.state.movies.concat(data.results),
+                nexturl:data.next,
+               addMovies: this.state.addMovies.concat(data.results),
             });
         })
         .catch((e)=> console.log(e))
@@ -50,14 +63,19 @@ import Card from '../Card/Card';
         })
 
     }
+    */
 
         
     render() {
         
         return (
+            <>
             <div>
                {this.state.moviesOriginal.map(movie=> <Card key={movie.id} movie={movie} />)}
+                
             </div>
+                <button onClick={() => this.add()}>Cargar más tarjetas</button>
+            </>
         )
     }
 }

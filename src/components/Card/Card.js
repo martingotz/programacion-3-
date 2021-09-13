@@ -9,7 +9,7 @@ import React   from 'react'
         return (
             <div>
                 <main>
-                    <button type="button">Cargar más tarjetas</button>
+                    <button onClick={() => this.add()}>Cargar más tarjetas</button>
                     <section className="card-container">
                         <article>
                             <section className="navigation">
@@ -25,6 +25,8 @@ import React   from 'react'
 
                                 <h3>{title}</h3>
                                 <p className ="description">{overview}</p>
+                        
+                    
                                 <section className ="aditional-info">
                                 
                                 </section>
