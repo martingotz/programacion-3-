@@ -8,6 +8,7 @@ import Card from '../Card/Card';
             moviesOriginal: [],
             moviesFilter:[],
             nexturl:"",
+            
          }
      }
      componentDidMount(){
@@ -75,7 +76,7 @@ import Card from '../Card/Card';
         
     render() {
         let loading ;
-        if (this.state.moviesOriginal== " ") {
+        if (this.state.moviesOriginal.length== 0) {
             loading = <p> loading....</p>
             console.log("ESTO ES LOADING");
         } else {
