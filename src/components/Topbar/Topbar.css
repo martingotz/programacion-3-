@@ -1,0 +1,45 @@
+.TopbarContainer {
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end; 
+    align-items: flex-start; 
+    color: red;
+    
+    
+    
+    
+    }
+    
+    .logo-igual{
+    width: 10%;  }
+    
+    .logo-cuadrados{
+        width: 7%; }
+    
+    
+    .fa-align-justify{
+        text-align: right;
+        align-self: flex-start;
+        margin-right: 0.5%;
+        margin-left: 0.5%;
+    
+    
+        }
+    
+    .fa-th{
+    
+        text-align: right;
+        margin-right: 0.5%;
+        padding:  0 auto;
+        position: relative; left: 20%;
+        
+    }
+    
+    .orden{
+    
+        position: relative; left: 44%;
+        font-size: 10px;
+    
+    }

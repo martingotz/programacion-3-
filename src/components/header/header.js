@@ -1,13 +1,14 @@
 import React from 'react'
 import Topbar from '../Topbar/Topbar';
+import './Header.css'
 
 
 function Header() {
 
 return( 
         <>
-            <div>
-            <h1>Nuflix</h1>
+            <div >
+            <h1 className="titulo">Nuflix</h1>
 
 
             <section>

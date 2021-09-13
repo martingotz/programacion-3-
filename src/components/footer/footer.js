@@ -1,21 +1,24 @@
 import React from 'react';
-
+import './Footer.css';
 
 
 
 function Footer() {
 
 return( 
-        <>
-           <ul className="team">
-            <li>Martín Götz</li>
-            <li>Jeronimo Kilian</li>
-            <li>Santino Bonarrigo</li>
-        </ul>  
+        <footer className="footer">
+         <ul className="team">
 
-        </>
+            <li className="primerparticipante" >Martín Götz</li>
+            <li className="segundoparticipante" >Jeronimo Kilian</li>
+            <li className="tercerparticipante" >Santino Bonarrigo</li>
+
+            
+        </ul> 
+        </footer> 
 
  )
+
 
     
 }

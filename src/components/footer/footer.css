@@ -1,0 +1,22 @@
+.team{
+
+
+    display: flex;
+flex-direction: row;
+justify-content: flex-end; 
+align-items: flex-start; 
+margin-right: 1%;
+
+}
+
+.primerparticipante{margin-right: 5%;}
+
+.segundoparticipante{margin-right: 5%;}
+
+
+.footer{
+margin: 0 auto;
+padding-top:9%;
+
+
+}
