@@ -18,6 +18,19 @@
 
 
         } 
+        .more{
+            color: red;
+        }
+        .more:hover {
+            
+            cursor: pointer;
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
 
 
         .leftarrow{
