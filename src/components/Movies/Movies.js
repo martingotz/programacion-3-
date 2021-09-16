@@ -32,7 +32,7 @@ import './Movie.css'
      componentDidUpdate(){
          console.log("componentDidUpdate");
      }
-     add (){
+     /*add (){
         const url= this.state.nexturl
         
          fetch(url)
@@ -44,7 +44,8 @@ import './Movie.css'
                  })
                    })
      }
-    /*
+     */
+    
      add (){
         const url = this.state.nexturl;
         fetch(url)
@@ -65,7 +66,7 @@ import './Movie.css'
         })
 
     }
-    */
+    
     deleteCard(id){
         console.log(id);
         const moviesDelete = this.state.moviesOriginal.filter( movie => movie.id != id)
@@ -86,11 +87,12 @@ import './Movie.css'
         
         return ( 
             <>
+            <button onClick={() => this.add()}>Cargar más tarjetas</button>
             <div className="movieContainer">
              {loading}
-                
+             
             </div>
-                <button onClick={() => this.add()}>Cargar más tarjetas</button>
+                
             </>
         )
     }

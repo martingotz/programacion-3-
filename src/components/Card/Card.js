@@ -58,17 +58,18 @@ this.setState({
                         </section>
                         <main>
                             
-                            <img className="img" src= {`https://image.tmdb.org/t/p/w342/${this.props.movie.poster_path}`} alt=""/>
+                            <img className="img" src= {`https://image.tmdb.org/t/p/w342/${this.props.movie.poster_path}`} alt={this.props.movie.title}/>
 
                             <h3>{this.props.movie.title}</h3>
+
                             <p className ="description">{this.props.movie.overview}</p>
                     
                 
                             <section className ="aditional-info">
                             
                             </section>
-                            {/*<a href="">Ver más</a>*/}
-                            <p className = {`${ this.state.viewMore ? 'show': 'hide'}` }> Realese date: {this.props.movie.release_date} </p>
+                            
+                            <p className = {`${ this.state.viewMore ? 'show': 'hide'}` }> Realese date: {this.props.movie.release_date} <br /> Vote average: {this.props.movie.vote_average} <br /> Popularity: {this.props.movie.popularity} </p>
                             <p className = "more"  onClick= {()=>this.viewMore()}>  {this.state.text}  </p>
                             <button onClick={()=> this.props.delete(this.props.movie.id)}> Delete </button>
                            
