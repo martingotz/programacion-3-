@@ -9,20 +9,24 @@ import './Movie.css'
             moviesOriginal: [],
             moviesFilter:[],
             nexturl:"",
+            nextpage: 1,
             
          }
      }
      componentDidMount(){
          console.log("Component did mount");
-         const url = 'https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=1'
+         const url = `https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=${this.state.nextpage}`
          fetch(url)
          
          .then((respuesta)=>respuesta.json()) 
        .then((data)=> {
+           console.log(data);
            this.setState({
                moviesOriginal: data.results,
                moviesFilter: data.results,
-               nexturl: data.next, // Va con agregar mas 
+               movie: data.results,
+               nextpage: data.page +1, // Va con agregar mas 
+
            })
 
 
@@ -47,29 +51,29 @@ import './Movie.css'
      */
     
      add (){
-        const url = this.state.nexturl;
+        const url = `https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=${this.state.nextpage}`;
+        console.log(url);
+        
         fetch(url)
+
         .then((respuesta)=> respuesta.json())
         .then((data)=>{
             console.log(data);
             this.setState({
-                nexturl:data.next,
-               addMovies: this.state.addMovies.concat(data.results),
+                nextpage: data.page +1,
+               addMovies: this.state.moviesOriginal.concat(data.results),
             });
         })
+        
         .catch((e)=> console.log(e))
     }
-    original(){
-        this.setState({
-            moviesFilter: this.state.moviesOriginal,
-            nexturl: 'https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=2'
-        })
-
-    }
+   
     
     deleteCard(id){
         console.log(id);
-        const moviesDelete = this.state.moviesOriginal.filter( movie => movie.id != id)
+        const moviesDelete = this.state.movie.filter( movie => movie.id != id)
+        console.log(moviesDelete);
+        console.log(this.state.movie);
         this.setState ({
             movie: moviesDelete
         })
@@ -82,7 +86,7 @@ import './Movie.css'
             loading = <p> loading....</p>
             console.log("ESTO ES LOADING");
         } else {
-            loading = <> { this.state.moviesOriginal.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} />) } </>
+            loading = <> { this.state.movie.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} />) } </>
         }
         
         return ( 
