@@ -61,7 +61,7 @@ import './Movie.css'
             console.log(data);
             this.setState({
                 nextpage: data.page +1,
-               addMovies: this.state.moviesOriginal.concat(data.results),
+               movie: this.state.movie.concat(data.results),
             });
         })
         
