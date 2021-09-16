@@ -20,6 +20,7 @@ return(
                 <form action="">
                 <input type="text" name="search" id="" placeholder="Search" />
                     <button type="submit">Enviar<i className="fas fa-search"></i></button>
+                    
                 </form>
             </section>  
 
