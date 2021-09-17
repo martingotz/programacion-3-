@@ -3,6 +3,7 @@ import './Topbar.css';
 
 
  class Topbar extends Component {
+<<<<<<< HEAD
 
 
 constructor(){
@@ -30,6 +31,9 @@ vertical(){
 
 
 
+=======
+    
+>>>>>>> a98d7f648a417d1f5b4d2f7ff7695373d8ea35b0
     render() {
         return (
             <>
