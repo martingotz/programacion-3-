@@ -52,7 +52,7 @@ this.setState({
                                 <i className="fas fa-chevron-left"  > <img className="leftarrow" src={"/assets/img/left-arrow.png"}/>     </i>
 
                                 <i className="fas fa-chevron-right"><img className="rightarrow" src={"/assets/img/right-arrow.png"}/> </i>
-                                <i className="far fa-window-close"><img className="delete" src={"/assets/img/cruz.jpeg"}/>  </i>
+                                <i className="far fa-window-close" onClick={()=> this.props.delete(this.props.movie.id)}><img className="delete" src={"/assets/img/favicon-32x32.png"}/>  </i>
                             </div>
                            
                         </section>
@@ -67,10 +67,9 @@ this.setState({
                             <section className ="aditional-info">
                             
                             </section>
-                            {/*<a href="">Ver más</a>*/}
+                           
                             <p className = {`${ this.state.viewMore ? 'show': 'hide'}` }> Realese date: {this.props.movie.release_date} <br /> Vote Average:{this.props.movie.vote_average} <br /> Popularity: {this.props.movie.popularity} <br />  </p>
                             <p className = "more"  onClick= {()=>this.viewMore()}>  {this.state.text}  </p>
-                            <button onClick={()=> this.props.delete(this.props.movie.id)}> Delete </button>
                            
                         </main>
                     </article>
@@ -83,11 +82,6 @@ this.setState({
     }
 }
 
-/*
-      console.log(props.movie);
-   const {title, overview, poster_path,id} = props.movie */
-
-   
     
 
 

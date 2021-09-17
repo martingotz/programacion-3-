@@ -7,10 +7,8 @@ import './Movie.css'
          super(props)
          this.state ={ 
             moviesOriginal: [],
-            moviesFilter:[],
-            nexturl:"",
             nextpage: 1,
-            
+            filter: false,
          }
      }
      componentDidMount(){
@@ -23,7 +21,6 @@ import './Movie.css'
            console.log(data);
            this.setState({
                moviesOriginal: data.results,
-               moviesFilter: data.results,
                movie: data.results,
                nextpage: data.page +1, // Va con agregar mas 
 
@@ -36,20 +33,8 @@ import './Movie.css'
      componentDidUpdate(){
          console.log("componentDidUpdate");
      }
-     /*add (){
-        const url= this.state.nexturl
-        
-         fetch(url)
-             .then((respuesta) => respuesta.json())
-             .then((data) => {
-                 this.setState({
-                     nexturl: 'https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=1'
-
-                 })
-                   })
-     }
-     */
     
+     
      add (){
         const url = `https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=${this.state.nextpage}`;
         console.log(url);
@@ -79,7 +64,14 @@ import './Movie.css'
         })
 
     }
-        
+    searchfilter(){
+        const movieSearch = this.state.movie.filter (movie => movie.title.toLowerCase().includes(this.searchfilter.toLowerCase()) )
+        console.log((movieSearch));
+       
+        this.setState({
+            movie: movieSearch
+        })
+    }
     render() {
         let loading ;
         if (this.state.moviesOriginal.length== 0) {
@@ -91,8 +83,12 @@ import './Movie.css'
         
         return ( 
             <>
+                  <form action="">
+                <input  filter={this.state.filter} searchfilter={()=> this.searchfilter()}  filter={this.state.filter} type="text" name="search" id="" placeholder="Search" />
+                    <button type="submit">Enviar<i className="fas fa-search"></i> </button>
+                </form>
             <button onClick={() => this.add()}>Cargar más tarjetas</button>
-            <div className="movieContainer">
+            <div className="rowMovie">
              {loading}
              
             </div>

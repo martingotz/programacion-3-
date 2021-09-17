@@ -19,18 +19,19 @@ margin-bottom: 0%;
     
     }
     
-    .logo-igual{
+    .logoIgual{
     width: 10%;  }
     
-    .logo-cuadrados{
-        width: 7%; }
+   
     
     
     .fa-align-justify{
-        text-align: right;
+        /* text-align: right; */
         align-self: flex-start;
-        margin-right: 0.5%;
-        margin-left: 0.5%;
+        /* margin-right: 0.5%;
+        margin-left: 0.5%; */
+
+
     
     
         }

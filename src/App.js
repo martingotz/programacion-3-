@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Header from './components/Header/Header';
+import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer';
 import Movies from './components/Movies/Movies';
 import  './App.css'
@@ -9,21 +9,21 @@ import  './App.css'
      super(props)
      this.state ={
         filter: false,
-        horizontal:false
+        rowMovie:""
      }
    }
-   view (){
-      if(this.state.horizontal){
-        this.setState({
-          horizontal:false,
-        })
-      } else {
-        this.setState({
-          horizontal: true,
-        })
+  //  view (){
+  //     if(this.state.horizontal){
+  //       this.setState({
+  //         horizontal:false,
+  //       })
+  //     } else {
+  //       this.setState({
+  //         horizontal: true,
+  //       })
 
-      }
-   }
+  //     }
+  //  }
    searchfilter(){
 
    }
