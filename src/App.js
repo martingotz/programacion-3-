@@ -31,17 +31,17 @@ import  './App.css'
     return (
       <div>
             
-      <div>
+      
       <Header  className={`${this.state.horizontal} ? false : true `} onClick={()=>this.horizontal()} filter={this.state.filter} searchfilter={()=> this.searchfilter()}/>
-      </div>
+     
 
-      <div>
+      
       <Movies filter={this.state.filter}/>
-      </div>
+     
 
-      <div> 
+      
       <Footer/>
-      </div> 
+      
       </div>
     )
   }

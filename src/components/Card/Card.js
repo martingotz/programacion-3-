@@ -68,7 +68,7 @@ this.setState({
                             
                             </section>
                             {/*<a href="">Ver más</a>*/}
-                            <p className = {`${ this.state.viewMore ? 'show': 'hide'}` }> Realese date: {this.props.movie.release_date} </p>
+                            <p className = {`${ this.state.viewMore ? 'show': 'hide'}` }> Realese date: {this.props.movie.release_date} <br /> Vote Average:{this.props.movie.vote_average} <br /> Popularity: {this.props.movie.popularity} <br />  </p>
                             <p className = "more"  onClick= {()=>this.viewMore()}>  {this.state.text}  </p>
                             <button onClick={()=> this.props.delete(this.props.movie.id)}> Delete </button>
                            
