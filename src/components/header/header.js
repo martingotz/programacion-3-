@@ -3,7 +3,7 @@ import Topbar from '../Topbar/Topbar';
 import './Header.css'
 
 
-function Header() {
+function Header(props) {
 
 return( 
         <>
