@@ -28,12 +28,12 @@ columnMovie(){
     render() {
       return(
             
-                    <div className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`}   >
+                    <div>
             <h1 className="titulo">Nuflix</h1>
             <p className="orden">Ordenar ASC/ DESC</p>
 
        
-            <div className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`}>
+            <div>
             <button onClick ={()=>this.columnMovie()}   ><img className="logoIgual" src={"/assets/img/menu2.jpeg"}/> {()=>this.columnMovie()}</button>
 
             <button  onClick={()=>this.rowMovie()}><img className="logoIgual" src={"/assets/img/menu.jpeg"}/>  {()=>this.rowMovie()}</button>

@@ -9,7 +9,8 @@ import './Movie.css'
             moviesOriginal: [],
             nextpage: 1,
             valor: '',
-            view: "rowMovie"
+            view: "rowMovie",
+            moviesFilter: []
          }
 
 
@@ -25,6 +26,7 @@ import './Movie.css'
            console.log(data);
            this.setState({
                moviesOriginal: data.results,
+               moviesFilter: data.results,
                movie: data.results,
                nextpage: data.page +1, // Va con agregar mas 
 
@@ -50,7 +52,7 @@ import './Movie.css'
             console.log(data);
             this.setState({
                 nextpage: data.page +1,
-               movie: this.state.movie.concat(data.results),
+               moviesFilter: this.state.moviesFilter.concat(data.results),
             });
         })
         
@@ -60,11 +62,11 @@ import './Movie.css'
     
     deleteCard(id){
         console.log(id);
-        const moviesDelete = this.state.movie.filter( movie => movie.id != id)
+        const moviesDelete = this.state.moviesFilter.filter( movie => movie.id != id)
         console.log(moviesDelete);
         console.log(this.state.movie);
         this.setState ({
-            movie: moviesDelete
+            moviesFilter: moviesDelete
         })
 
     }
@@ -101,7 +103,7 @@ import './Movie.css'
 filterMovie(filterText){
     let filterMovies = this.state.moviesOriginal.filter( movie => movie.title.toLowerCase().includes(filterText.toLowerCase()))
     this.setState({
-        moviesOriginal: filterMovies,
+        moviesFilter: filterMovies,
     })
 }
 
@@ -112,9 +114,9 @@ filterMovie(filterText){
         let loading ;
         if (this.state.moviesOriginal.length== 0) {
             loading = <p> loading....</p>
-            console.log("ESTO ES LOADING");
+            console.log("ESTO ES LOADING"); 
         } else {
-            loading = <> { this.state.movie.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} view={this.state.view} />) } </>
+            loading = <> { this.state.moviesFilter.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} view={this.state.view} />) } </>
         }
         
         return ( 

@@ -45,12 +45,12 @@ columnMovie(){
       <div>
             
       
-      <Header className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`} columnMovie={()=>this.columnMovie()}  rowMovie={()=>this.rowMovie()}   filter={this.state.filter} searchfilter={()=> this.searchfilter()}/>
+      <Header className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`} columnMovie={()=>this.columnMovie()}  rowMovie={()=>this.rowMovie()}  
+       filter={this.state.filter} searchfilter={()=> this.searchfilter()}/>
      
 
       
-      <Movies filter={this.state.filter} view={this.state.view}/> 
-     
+      <Movies filter={this.state.filter} view={this.state.view}className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`}  /> 
 
       
       <Footer/>
