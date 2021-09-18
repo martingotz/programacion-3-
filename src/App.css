@@ -1,2 +1,24 @@
 *{background-color: #9b0606
     ;}
+    .rowMovie{
+
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+         flex-direction: row;
+    align-items:  flex-start; 
+    
+     }; 
+    
+    
+     .columnMovie{
+    
+    
+        display: flex;
+        flex-wrap: wrap;
+         flex-direction: column;
+    align-items: center;
+    
+    
+}

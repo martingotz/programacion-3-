@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Movies from './components/Movies/Movies';
 import  './App.css'
 
+
  class App extends Component {
    constructor(props){
      super(props)
@@ -24,6 +25,18 @@ import  './App.css'
 
   //     }
   //  }
+
+  rowMovie(){
+    this.setState({
+        view:"rowMovie"
+    })
+}
+columnMovie(){
+    this.setState({
+        view:"columnMovie"
+    })
+}
+
    searchfilter(){
 
    }
@@ -32,11 +45,11 @@ import  './App.css'
       <div>
             
       
-      <Header  className={`${this.state.horizontal} ? false : true `} onClick={()=>this.horizontal()} filter={this.state.filter} searchfilter={()=> this.searchfilter()}/>
+      <Header className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`} columnMovie={()=>this.columnMovie()}  rowMovie={()=>this.rowMovie()}   filter={this.state.filter} searchfilter={()=> this.searchfilter()}/>
      
 
       
-      <Movies filter={this.state.filter}/>
+      <Movies filter={this.state.filter} view={this.state.view}/> 
      
 
       

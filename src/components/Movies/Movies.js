@@ -9,7 +9,11 @@ import './Movie.css'
             moviesOriginal: [],
             nextpage: 1,
             filter: false,
+            view: "rowMovie"
          }
+
+
+    
      }
      componentDidMount(){
          console.log("Component did mount");
@@ -72,28 +76,54 @@ import './Movie.css'
             movie: movieSearch
         })
     }
+    rowMovie(){
+        this.setState({
+            view:"rowMovie"
+        })
+    }
+    columnMovie(){
+        this.setState({
+            view:"columnMovie"
+        })
+    }
+
+
+ 
+
+
     render() {
         let loading ;
         if (this.state.moviesOriginal.length== 0) {
             loading = <p> loading....</p>
             console.log("ESTO ES LOADING");
         } else {
-            loading = <> { this.state.movie.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} />) } </>
+            loading = <> { this.state.movie.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} view={this.state.view} />) } </>
         }
         
         return ( 
-            <>
+            <div className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`}>
+            <button onClick ={()=>this.columnMovie()}   ><img className="logoIgual" src={"/assets/img/menu2.jpeg"}/> {()=>this.columnMovie()}</button>
+
+            <button  onClick={()=>this.rowMovie()}><img className="logoIgual" src={"/assets/img/menu.jpeg"}/>  {()=>this.rowMovie()}</button>
+
+
+
+
+
                   <form action="">
                 <input  filter={this.state.filter} searchfilter={()=> this.searchfilter()}  filter={this.state.filter} type="text" name="search" id="" placeholder="Search" />
                     <button type="submit">Enviar<i className="fas fa-search"></i> </button>
                 </form>
-            <button onClick={() => this.add()}>Cargar más tarjetas</button>
-            <div className="rowMovie">
+
+
+
+            <button onClick={() => this.add()}>Cargar más tarjetas</button> 
+            <div className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`} >
              {loading}
              
             </div>
                 
-            </>
+            </div>
         )
     }
 }
