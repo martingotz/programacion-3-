@@ -8,7 +8,7 @@ import './Movie.css'
          this.state ={ 
             moviesOriginal: [],
             nextpage: 1,
-            filter: false,
+            valor: '',
             view: "rowMovie"
          }
 
@@ -68,13 +68,25 @@ import './Movie.css'
         })
 
     }
-    searchfilter(){
+   /* searchfilter(){
         const movieSearch = this.state.movie.filter (movie => movie.title.toLowerCase().includes(this.searchfilter.toLowerCase()) )
         console.log((movieSearch));
        
         this.setState({
             movie: movieSearch
         })
+    }*/
+    evitarSubmit (event){
+        event.preventDefault()
+    }
+    controlarCambios(event){
+        //const movieSearch = this.state.moviesOriginal.filter (moviesOriginal => moviesOriginal.title.includes(this.controlarCambios) )
+        console.log(this.state.valor);
+        this.setState({
+            valor: event.target.value,
+            //moviesOriginal: movieSearch,
+
+        }, ()=> this.filterMovie(this.state.valor) )
     }
     rowMovie(){
         this.setState({
@@ -86,7 +98,12 @@ import './Movie.css'
             view:"columnMovie"
         })
     }
-
+filterMovie(filterText){
+    let filterMovies = this.state.moviesOriginal.filter( movie => movie.title.toLowerCase().includes(filterText.toLowerCase()))
+    this.setState({
+        moviesOriginal: filterMovies,
+    })
+}
 
  
 
@@ -110,8 +127,8 @@ import './Movie.css'
 
 
 
-                  <form action="">
-                <input  filter={this.state.filter} searchfilter={()=> this.searchfilter()}  filter={this.state.filter} type="text" name="search" id="" placeholder="Search" />
+                  <form  onSubmit={(event)=> this.evitarSubmit(event)} action="">
+                <input type="text" onChange={(event)=> this.controlarCambios(event) } value={this.state.valor} filterMovies={(param)=> this.filterMovie(param)} name="search" id="" placeholder="Search" />
                     <button type="submit">Enviar<i className="fas fa-search"></i> </button>
                 </form>
 
