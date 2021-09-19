@@ -83,6 +83,11 @@ import './Movie.css'
 
         }, ()=> this.filterMovie(this.state.valor) )
     }
+
+
+    //metodo que describe que queremos que pase cuando sucede el evento. 
+// yo defino las consecuencias, que quiero que suceda cuando suceden los eventos. ahora como los asocio a lugares concretos de nuestro html? bueno, en el lugar donde quiiero que suceda pongo el evento
+
     rowMovie(){
         this.setState({
             view:"rowMovie"
@@ -109,11 +114,17 @@ filterMovie(filterText){
             loading = <p> loading....</p>
             console.log("ESTO ES LOADING"); 
         } else {
-            loading = <> { this.state.moviesFilter.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} view={this.state.view} />) } </>
+            loading = <> 
+            { this.state.moviesFilter.map(movie => <Card key={movie.id} movie={movie} delete={(movieDelete) => this.deleteCard(movieDelete)} view={this.state.view} />) } </>
         }
         
         return ( 
-            <div className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`}>
+            <div >
+
+                                {/* // aca pongo el evento que es el lugar donde quiero que suceda. pongo el evento onClcik, a cada uno le adisiono js por eso le ponemos la llave.  noterse que los eventos llevan camelcase, en mayuscula cada palabra
+                // podemos poner una funcion y definirlo 
+                //ponemos el nombre del metodo colunMovie con los parentesis porque queres qeu se ejecute en el momento  */}
+
             <button onClick ={()=>this.columnMovie()}   ><img className="logoIgual" src={"/assets/img/menu2.jpeg"}/> {()=>this.columnMovie()}</button>
 
             <button  onClick={()=>this.rowMovie()}><img className="logoIgual" src={"/assets/img/menu.jpeg"}/>  {()=>this.rowMovie()}</button>
@@ -135,7 +146,7 @@ filterMovie(filterText){
              
             </div>
                 
-            </div>
+             </div>
         )
     }
 }

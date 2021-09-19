@@ -10,48 +10,37 @@ import  './App.css'
      super(props)
      this.state ={
         filter: false,
-        rowMovie:""
-     }
+        
+      }
    }
-  //  view (){
-  //     if(this.state.horizontal){
-  //       this.setState({
-  //         horizontal:false,
-  //       })
-  //     } else {
-  //       this.setState({
-  //         horizontal: true,
-  //       })
 
-  //     }
+//   rowMovie(){
+//     this.setState({
+//         view:"rowMovie"
+//     })
+// }
+// columnMovie(){
+//     this.setState({
+//         view:"columnMovie"
+//     })
+// }
+
+
+  //  searchfilter(){
+
   //  }
-
-  rowMovie(){
-    this.setState({
-        view:"rowMovie"
-    })
-}
-columnMovie(){
-    this.setState({
-        view:"columnMovie"
-    })
-}
-
-   searchfilter(){
-
-   }
   render() {
     return (
       <div>
             
       
-      <Header className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`} columnMovie={()=>this.columnMovie()}  rowMovie={()=>this.rowMovie()}  
+      <Header columnMovie={()=>this.columnMovie()}  rowMovie={()=>this.rowMovie()}  
        filter={this.state.filter} searchfilter={()=> this.searchfilter()}/>
      
 
-      
-      <Movies filter={this.state.filter} view={this.state.view}className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`}  /> 
-
+      <div className={`${this.state.view ==   "rowMovie" ? 'rowMovie' : 'columnMovie'}`}  >
+      <Movies filter={this.state.filter} view={this.state.view}/> 
+      </div>
       
       <Footer/>
       
