@@ -70,23 +70,16 @@ import './Movie.css'
         })
 
     }
-   /* searchfilter(){
-        const movieSearch = this.state.movie.filter (movie => movie.title.toLowerCase().includes(this.searchfilter.toLowerCase()) )
-        console.log((movieSearch));
-       
-        this.setState({
-            movie: movieSearch
-        })
-    }*/
+   
     evitarSubmit (event){
         event.preventDefault()
     }
     controlarCambios(event){
-        //const movieSearch = this.state.moviesOriginal.filter (moviesOriginal => moviesOriginal.title.includes(this.controlarCambios) )
+       
         console.log(this.state.valor);
         this.setState({
             valor: event.target.value,
-            //moviesOriginal: movieSearch,
+            
 
         }, ()=> this.filterMovie(this.state.valor) )
     }
