@@ -7,7 +7,7 @@ class Card extends Component {
         this.state ={ 
             viewMore: false,
             text:'Ver más',
-            selected: false,
+           
 
            
         }
@@ -28,22 +28,10 @@ this.setState({
         }
         
     }
-    /*selected () {
-        if (this.state.selected) {
-            this.setState({
-               selected: false,
-            })
-        }
-        else {
-            this.setState({
-               selected: true ,
-
-            })
-        }
-    }*/
+    
     render() {
         return (
-            <div className ={`container`} >
+            <div className = "container" >
             <main>
                 <section className="card-container">
                     <article>
