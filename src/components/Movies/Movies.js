@@ -43,6 +43,7 @@ import './Movie.css'
      
      add (){
         const url = `https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=${this.state.nextpage}`;
+        //javascript, template literals(valores de javascript)
         console.log(url);
         
         fetch(url)

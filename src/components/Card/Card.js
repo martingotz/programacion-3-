@@ -28,7 +28,7 @@ this.setState({
         }
         
     }
-    selected () {
+    /*selected () {
         if (this.state.selected) {
             this.setState({
                selected: false,
@@ -40,10 +40,10 @@ this.setState({
 
             })
         }
-    }
+    }*/
     render() {
         return (
-            <div className ={`container ${this.state.selected ? "active" : " "}`} onDoubleClick = {()=>this.selected()}>
+            <div className ={`container`} >
             <main>
                 <section className="card-container">
                     <article>
