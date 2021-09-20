@@ -18,7 +18,7 @@ import './Movie.css'
      }
      componentDidMount(){
          console.log("Component did mount");
-         const url = `https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=${this.state.nextpage}`
+         const url = `https://api.themoviedb.org/3/movie/popular?api_key=4376257ca33773b58ce7e3a2ca8c1180&language=en-US&page=1`
          fetch(url)
          
          .then((respuesta)=>respuesta.json()) 
@@ -99,7 +99,7 @@ import './Movie.css'
         })
     }
 filterMovie(filterText){
-    let filterMovies = this.state.moviesOriginal.filter( movie => movie.title.toLowerCase().includes(filterText.toLowerCase()))
+    let filterMovies = this.state.moviesFilter.filter( (movie) => movie.title.toLowerCase().includes(filterText.toLowerCase()))
     this.setState({
         moviesFilter: filterMovies,
     })
